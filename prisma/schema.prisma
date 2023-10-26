@@ -16,7 +16,6 @@ model User {
   name  String?
   rua   String?
   posts Post[]
-  enderecos Endereco[]
 }
 
 model Post {
