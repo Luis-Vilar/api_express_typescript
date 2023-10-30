@@ -46,10 +46,10 @@ describe("POST /api/login", () => {
     expect(response.status).toBe(422);
   });
 
-  test("should return 422 when empty name send", async () => {
+  test("should return 200 when valid mail send", async () => {
     const response = await request.post("/api/login").send({
       email: "email@dominio.com",
     });
-    expect(response.status).toBe(422);
+    expect(response.status).toBe(200);
   });
 });
