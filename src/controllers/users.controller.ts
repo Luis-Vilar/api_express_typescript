@@ -10,7 +10,7 @@ class UsersControllers {
     this.signup = async (req: Request, res: Response) => {
       const { email, name } = req.body;
       if (!email || !name)
-        return res.status(400).json({ error: "Email and name are required" });
+        return res.status(422).json({ error: "Email and name are required" });
 
       try {
         const user = await prisma.user.create({
@@ -35,6 +35,7 @@ class UsersControllers {
     //fake login method need to be implemented with jsonwebtoken
     this.login = async (req: Request, res: Response) => {
       const { email } = req.body;
+      if (!email) return res.status(422).json({ error: "Email is required" });
       try {
         const user = await prisma.user.findUnique({
           where: {
