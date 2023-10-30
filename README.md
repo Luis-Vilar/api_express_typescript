@@ -1,6 +1,5 @@
 # api_express_typescript
-Typescript  + Exrpess + Prisma [ORM]
-
+Typescript  + Exrpess + Prisma [ORM] + Vitest + Supertest
 ## References
 - https://www.typescriptlang.org/
 - https://www.prisma.io/
