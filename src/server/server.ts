@@ -24,5 +24,8 @@ class Server {
   middlewares(middlewares: any) {
     this.app.use(middlewares);
   }
+  getApp() {
+    return this.app;
+  }
 }
 export default Server;
