@@ -5,27 +5,38 @@ import middlewares from "../middlewares";
 class Server {
   private app: Application = express();
 
-  constructor() {
+  private static instance: Server;
+
+  private constructor() {
     this.middlewares(middlewares);
     this.routes(apiRoutes);
     this.startServer(this.app, 3000);
   }
 
-  startServer(app: Application, port: number) {
+  static getInstance(): Server {
+    if (!Server.instance) {
+      Server.instance = new Server();
+    }
+    return Server.instance;
+  }
+
+  private startServer(app: Application, port: number) {
     app.listen(port, () => {
       console.log(`Server started on ${port}`);
     });
   }
 
-  routes(routes: Router) {
+  private routes(routes: Router) {
     this.app.use(routes);
   }
 
-  middlewares(middlewares: any) {
+  private middlewares(middlewares: any) {
     this.app.use(middlewares);
   }
+
   getApp() {
     return this.app;
   }
 }
+
 export default Server;
