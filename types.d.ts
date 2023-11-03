@@ -1,4 +1,4 @@
-export interface newResponse {
+export type newResponse = {
   message: string;
   status: number;
   cause?: string;
