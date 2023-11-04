@@ -23,9 +23,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name : Prisma Init
+      - name : Prisma Init and Tests
         env : 
           DATABASE_URL : ${{ secrets.DATABASEURL }}
-        run: npx prisma migrate dev --name init
-      - name: Run tests  
-        run: npm test 
+        run: npx prisma migrate dev --name init && npm run test
+
+
