@@ -21,8 +21,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-      # variables de ambiente DATABASE_URL
-
 
       - name: Run tests  
         env:
