@@ -1,4 +1,4 @@
-name: Node.js CI/CD
+name: Testes
 
 on:
   push:
@@ -8,20 +8,23 @@ on:
 env:
   DATABASE_URL: ${{ secrets.DATABASEURL }}
 jobs:
-  build:
+  testing:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 18.18.0
 
       - name: Install dependencies
-        run: npm install
-
+        run: npm ci
+      - name : database url
+        run: echo $DATABASE_URL
+      - name : Prisma Init
+        run: npx prisma migrate dev --name init
       - name: Run tests  
         run: npm test 
