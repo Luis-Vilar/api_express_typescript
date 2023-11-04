@@ -1,4 +1,4 @@
-name: Unit Tests
+name: Node.js CI/CD
 
 on:
   push:
@@ -20,6 +20,11 @@ jobs:
           node-version: 18.18.0
 
       - name: Install dependencies
-        run: npm install
+        run: npm install 
+
+      - name: Build
+        run: npm run build
+      - name : Prisma migrate
+        run: npx prisma migrate dev --name init --preview-feature
       - name: Run tests
-        run: npm run test
+        run: npm test
