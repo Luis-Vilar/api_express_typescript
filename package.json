@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --detectOpenHandles --forceExit --verbose",
     "coverage": "jest --coverage",
     "build": "npx tsc",
     "start": "node dist/index.js",
