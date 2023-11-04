@@ -23,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name : database url
-        run: echo $DATABASE_URL
+        run: echo ${{ secrets.DATABASEURL }}
       - name : Prisma Init
         run: npx prisma migrate dev --name init
       - name: Run tests  
