@@ -1,9 +1,9 @@
-import { describe } from "node:test";
 import server from "../server/server";
 import supertest from "supertest";
-import { expect, test } from "vitest";
+import {describe, expect, test} from '@jest/globals';
 
-const app = new server().getApp();
+
+const app =  server.getInstance().getApp()
 const request = supertest(app);
 
 describe("POST /api/signup", () => {
