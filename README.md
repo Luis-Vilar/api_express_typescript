@@ -1,3 +1,5 @@
+# Status of Unit Test 
+[![Testes](https://github.com/Luis-Vilar/api_express_typescript/actions/workflows/tests.yaml/badge.svg?branch=developer)](https://github.com/Luis-Vilar/api_express_typescript/actions/workflows/tests.yaml)
 # api_express_typescript
 Typescript  + Exrpess + Prisma [ORM] + Vitest + Supertest
 ## References
