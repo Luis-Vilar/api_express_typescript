@@ -28,7 +28,7 @@ jobs:
         run: npx prisma migrate dev --name init && npm run test
 
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/developer'
     needs: testing
     runs-on: ubuntu-latest
 
