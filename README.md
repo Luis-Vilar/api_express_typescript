@@ -1,5 +1,7 @@
-# Status of Unit Test 
-[![Testes](https://github.com/Luis-Vilar/api_express_typescript/actions/workflows/tests.yaml/badge.svg?branch=developer)](https://github.com/Luis-Vilar/api_express_typescript/actions/workflows/tests.yaml)
+# Branch Main
+[![Continuous Integration and Continuous Deployment](https://github.com/Luis-Vilar/api_express_typescript/actions/workflows/pipeline.yaml/badge.svg?branch=main)](https://github.com/Luis-Vilar/api_express_typescript/actions/workflows/pipeline.yaml)
+# Branch Developer
+[![Continuous Integration and Continuous Deployment](https://github.com/Luis-Vilar/api_express_typescript/actions/workflows/pipeline.yaml/badge.svg?branch=developer)](https://github.com/Luis-Vilar/api_express_typescript/actions/workflows/pipeline.yaml)
 # api_express_typescript
 Typescript  + Exrpess + Prisma [ORM] + Vitest + Supertest
 ## References
