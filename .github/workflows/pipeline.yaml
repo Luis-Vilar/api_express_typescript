@@ -1,4 +1,4 @@
-name: Testes
+name: Continuous Integration and Continuous Deployment
 
 on:
   pull_request:
