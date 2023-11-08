@@ -3,8 +3,10 @@ name: Continuous Integration and Continuous Deployment
 on:
   pull_request:
     branches:
-      - main
       - developer
+  push:
+    branches:
+      - main
 
 jobs:
   testing:
@@ -29,9 +31,6 @@ jobs:
 
   deploy:
     if: ${{ github.ref == 'refs/heads/main' }}
-    needs: testing
     runs-on: ubuntu-latest
-
     steps:
-      - name: Fake deploy
-        run: echo "deploying"
+      - run: echo "Deploying to production server on branch $GITHUB_REF"
