@@ -3,8 +3,10 @@ name: Continuous Integration and Continuous Deployment
 on:
   pull_request:
     branches:
-      - main
       - developer
+  push:
+    branches:
+      - main
 
 jobs:
   testing:
@@ -28,10 +30,7 @@ jobs:
         run: npx prisma migrate dev --name init && npm run test
 
   deploy:
-    if: ${{ github.ref == 'refs/heads/developer' }}
-    needs: testing
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
-
     steps:
-      - name: Fake deploy
-        run: echo "deploying"
+      - run: echo "Deploying to production server on branch $GITHUB_REF"
